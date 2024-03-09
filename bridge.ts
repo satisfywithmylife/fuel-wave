@@ -13,5 +13,7 @@ const contract = new Contract(contract_address, abi, provider)
 wallet_list.forEach(element => {
     const wallet = Wallet.fromMnemonic(element, undefined, undefined, provider)
     console.log(wallet.address)
-    const balance = await wallet.getBalance(eth_address)
+    const balance = async()=>{
+        return await wallet.getBalance(eth_address)
+    }
 });
